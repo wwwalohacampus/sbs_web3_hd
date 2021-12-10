@@ -6,8 +6,13 @@
     <script>
         setInterval( () => {
             // TODO : 여기에 작성해보세요 :)
-
-            
+            let timer = new Date()
+            let h = timer.getHours()
+            let m = timer.getMinutes()
+            let s = timer.getSeconds()
+            let time = h + ":" + m + ":" + s
+            console.log(time);
+            document.getElementById('time').innerHTML = time
         }, 1000)
     </script>
 </head>
