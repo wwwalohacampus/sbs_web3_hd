@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 변경</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const imgs = document.querySelectorAll('.img')
+
+            // imgs 목록의 각 요소를 img 로 접근
+            // imgs 항목의 순서번호를 index 로 지정
+            imgs.forEach( (img, index) => {
+                const width = (index+1) * 100
+                const src = 'img/hamster.jpg'
+                // setAttribute() 
+                // : 요소의 속성을 설정하는 메서드
+                img.setAttribute('width', width)
+                img.setAttribute('src', src)
+
+                // getAttribute() 
+                // : 요소의 속성을 가져오는 메서드
+                console.log(img.getAttribute('src'))
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="" alt="" class="img">
+    <img src="" alt="" class="img">
+    <img src="" alt="" class="img">
+    <img src="" alt="" class="img">
+</body>
+</html>

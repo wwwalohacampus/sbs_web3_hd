@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background-color: yellow;
+        }
+
+        #animate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('button')
+            // 클릭 이벤트 리스터 추가
+            // move() 함수를 이벤트 핸들러로 설정
+            btn.addEventListener('click', move)
+        })
+
+        function move() {
+            const box = document.getElementById('animate')
+            let id = null
+            let pos = 0
+            // 타이머 제거
+            clearInterval(id)
+
+            id = setInterval( frame, 5 )
+
+            function frame() {
+                // 위치가 350 이면, 타이머 제거
+                if( pos == 350 ) { clearInterval(id) }
+                else {
+                    pos++
+                    box.style.top = pos + 'px'
+                    box.style.left = pos + 'px'
+                }
+                // 0, 1, 2, 3, ... 350
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <p><button>클릭!</button></p>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+</body>
+</html>
