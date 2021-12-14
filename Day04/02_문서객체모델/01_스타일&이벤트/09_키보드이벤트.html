@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const h1 = document.querySelector('h1')
+
+            // 익명 함수(화살표 함수)를 정의하여 print 상수에 대입
+            const print = (event) => {
+                let output = ''
+                output += `alt : ${event.altKey}<br>`
+                output += `ctrl : ${event.ctrlKey}<br>`
+                output += `shift : ${event.shiftKey}<br>`
+                output += `keyCode : ${event.keyCode}<br>`
+                h1.innerHTML = output
+
+                // 엔터를 입력했을 때,
+                if( event.keyCode == 13 )
+                    alert('엔터 입력!')
+
+                // ctrl + 2
+                if( event.ctrlKey && event.keyCode == 50 ) {
+                    location.href = "08_글자수세기.html"
+                    // location.href = "http://www.naver.com"
+                }
+
+                // ctrl + C
+                if( event.ctrlKey && event.keyCode == 67 ) {
+                    alert("무단 복사를 허용하지 않습니다!")
+                }
+            }
+
+            // 이벤트 등록
+            // keydown : 키가 눌릴 때
+            // keyup   : 키를 눌렀다가 뗄 때 
+            document.addEventListener('keydown', print)
+            document.addEventListener('keyUp', print)
+
+        }) 
+
+    </script>
+</head>
+<body>
+    <h1>아무키나 눌러보세요!</h1>
+</body>
+</html>

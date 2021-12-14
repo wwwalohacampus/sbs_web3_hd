@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변경 이벤트</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+
+            // 이벤트 등록
+            select.addEventListener('change', (event) => {
+                // event.currentTarget  : 이벤트가 발생한 현재 요소
+                // options              : select 노드의 옵션 태그들을 리스트로 가져온다
+                const options = event.currentTarget.options
+                // options.selectedIndex : 옵션들 중의 선택된 항목의 순서번호(index)
+                const index = event.currentTarget.options.selectedIndex
+
+                p.textContent = `선택 : ${options[index].textContent}`
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <p>선택 : </p>
+    <select name="food" id="food">
+        <option value="1">피자</option>     
+        <option value="2">제육볶음</option>
+        <option value="3">탕수육</option>
+        <option value="4">마카롱</option>
+        <option value="5">치킨</option>
+    </select>
+</body>
+</html>

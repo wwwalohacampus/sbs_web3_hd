@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 선택</title>
+<script>
+
+    // 태그 이름으로 요소 선택       : getElementsByTagName()
+    // id 로 요소 선택              : getElementById()
+    // class 로 요소 선택           : getElementsByClassName()
+    // name 로 요소 선택            : getElementsByName()
+    // 선택자 로 요소 선택          : querySelector()
+    // 선택자 해당 모든 요소 선택    : querySelectorAll()
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // 태그 이름으로 요소 선택 : getElementsByTagName()
+        // 모든 <li> 요소를 선택
+        const cafeList = document.getElementsByTagName('li')
+        for( let i = 0 ; i < cafeList.length ; i++ ) {
+            // item(인덱스) : 인덱스로 목록의 요소를 접근
+            cafeList.item(i).style.color = '#645fce'
+        }
+        
+        // id 로 요소 선택 : getElementById()
+        const box = document.getElementById('box')
+        box.style.width = '200px'
+        box.style.height = '200px'
+        box.style.backgroundColor = 'cornflowerblue'
+
+        // class 로 요소 선택 : getElementsByClassName()
+        const items = document.getElementsByClassName('item')
+        // 리스트를 index 로 접근
+        items[0].style.width = '200px'
+        items[0].style.height = '100px'
+        items[0].style.backgroundColor = 'cornflowerblue'
+        
+        items[1].style.width = '200px'
+        items[1].style.height = '100px'
+        items[1].style.backgroundColor = 'royalblue'
+
+        // 리스트를 item() 메서드로 접근
+        items.item(2).style.width = '200px'
+        items.item(2).style.height = '100px'
+        items.item(2).style.backgroundColor = 'DarkSlateBlue'
+
+        items.item(3).style.width = '200px'
+        items.item(3).style.height = '100px'
+        items.item(3).style.backgroundColor = 'Indigo'
+
+        // name 로 요소 선택 : getElementsByName()
+        const inputs = document.getElementsByName('input')
+        const input = inputs[0] 
+
+        // 입력 태그가 변경/키 입력 시, h1 태그에 텍스트를 출력
+        input.addEventListener('keyup', (event) => {
+            const text = document.getElementById('text')
+            // input.value : input 태그의 value 속성의 값 → 입력한 텍스트
+            // text.innerText = input.value
+            text.innerHTML = '<em>' + input.value + '</em>'
+            // innerText : 해당 요소에 '텍스트'만 지정하는 속성
+            // innerHTML : 해당 요소에 '텍스트' + 'HTML' 양식으로 지정하는 속성
+        })
+
+        // 선택자 로 요소 선택 : querySelector()
+        const ul = document.querySelector('.product-list ul')
+        ul.style.listStyle = 'none';
+
+
+        // 선택자 해당 모든 요소 선택 : querySelectorAll()
+        const lists = document.querySelectorAll('.product-list ul li')
+        
+        lists.forEach( (list) => {
+            // list 노드 자식 노드 중 0번째 노드 → img
+            list.children[0].src = './img/keyboard.jpg' 
+            list.children[0].style.width = '200px'
+        })
+
+    })
+
+</script>
+</head>
+<body>
+    <ul class="cafe-list">
+        <li>돌체콜드브루</li>
+        <li>딸기라떼</li>
+        <li>민트초콜릿칩플랫치노</li>
+        <li>녹차라떼</li>
+        <li>바닐라라떼</li>
+    </ul>
+
+    <hr>
+
+    <div id="box"></div>
+
+    <hr>
+
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+    <hr>
+
+    <h1 id="text">입력해보세요:)</h1>
+    <!-- empty element (빈 요소) -->
+    <!-- placeholder : 입력의 힌트 텍스트 메세지 -->
+    <input type="text" name="input" placeholder="입력해보세요:)" value="" >
+
+    <hr>
+
+    <div class="product-list">
+        <ul>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+            <li><img src="" alt=""></li>
+        </ul>
+    </div>
+
+
+</body>
+</html>
