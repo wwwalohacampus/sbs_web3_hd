@@ -1,4 +1,6 @@
 
+let slideOn = 'off'
+
 $(function() {
 
     // 메인 메뉴 - 마우스 올렸을 때 이벤트
@@ -20,24 +22,56 @@ $(function() {
     })
 
     // 슬라이드 메뉴
-    let slideOn = 'off'
     $('.slide-open').on('click', function() {
-
+        // 햄버거 메뉴 클릭 on
         if( slideOn == 'off') {
-            $('.slide').stop().animate({
-                right : 0
-            }, 1000)
-            slideOn = 'on'
-        } else {
-            $('.slide').stop().animate({
-                right : '-100%'
-            }, 1000)
-            slideOn = 'off'
+            slideBarOpen()
+        } 
+        // 햄버거 메뉴 클릭 off
+        else {
+            slideBarClose()
         }
     })
-
-    // 1. 슬라이드 바 바깥 클릭 시, 슬라이드 닫힘
-    // 2. 햄버거 메뉴 애니메이션
-    // 3. 슬라이드 바에 X 버튼 추가
+    
+    // 슬라이드 바 바깥+ X버튼 클릭 시, 슬라이드 닫힘
+    $('.bg, .cancel').on('click', function() {
+        slideBarClose()
+    })
 
 })
+
+
+// 슬라이드 바 열림
+function slideBarOpen() {
+    // 애니메이션으로 적용
+    // $('.slide').stop().animate({
+    //     left : 0
+    // }, 1000)
+
+    // class on 적용
+    $('.slide').addClass('on')
+    slideOn = 'on'
+
+    $('.bg').fadeIn(1200)
+    // $('.bg').css({'display' : 'block'})
+
+    $('.slide-open span').addClass('on')
+}
+
+// 슬라이드 바 닫힘
+function slideBarClose() {
+    // 애니메이션으로 적용
+    // $('.slide').stop().animate({
+    //     left : '-400px'
+    // }, 1000)
+
+    // class on 적용
+    $('.slide').removeClass('on')
+        slideOn = 'off'
+
+    $('.bg').fadeOut(1200)
+    // $('.bg').css({'display' : 'none'})
+
+    $('.slide-open span').removeClass('on')
+
+}

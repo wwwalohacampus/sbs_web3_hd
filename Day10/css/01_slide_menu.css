@@ -37,7 +37,15 @@ nav > ul > li:hover::after {
 
 nav > ul > li a { color: white; }
 
-.submenu { position: absolute; top: 100%; width: 1200px; height: 400px; background-color: orange; }
+.submenu {
+    position: absolute;
+    top: 100%;
+    width: 1200px;
+    height: 400px;
+    background-color: orange;
+    display: none;
+    z-index: 100;
+}
 
 
 /* 햄버거 메뉴 */
@@ -48,40 +56,74 @@ nav > ul > li a { color: white; }
     /* background-color: white; */
     margin-top: 30px;
     position: relative;
+    z-index: 400;
 }
 
-.burgur {
+.top, .mid, .bottom {
     display: block;
     position: absolute;
-    top: 10px;
     width: 30px;
     height: 2px;
     background-color: white;
 }
 
-.top-line {
-    position: absolute;
-    top: 0;
-    width: 30px;
-    height: 2px;
-    background-color: white;
+.top { top: 0; transition: all 1s;}
+.mid { top: 10px;  }
+.bottom { top: 20px; transition: all 1s;}
+
+.top.on {
+    transform: translateY(10px) rotate(45deg);
+    transition: all 1s;
 }
 
-.bot-line {
-    position: absolute;
-    top: 20px;
-    width: 30px;
-    height: 2px;
-    background-color: white;
+.mid.on { width: 0;}
+
+.bottom.on {
+    transform: translateY(-10px) rotate(-45deg);
+    transition: all 1s;
 }
+
+
 
 .slide {
     position: fixed;
-    right: -100%;
+    /* right: -100%; */
+    left: -400px;
     width: 400px;
     height: 100%;
     background-color: violet;
+    transition: all 1s;
+    z-index: 300;
 }
 
+.slide.on {
+    left: 0;
+    transition: all 1s;
+}
+
+/* 슬라이드바 바깥 영역 */
+.bg {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+
+/* 슬라이드 바 X버튼 */
+.cancel {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url('../img/cancel.png') no-repeat ;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
 
 
