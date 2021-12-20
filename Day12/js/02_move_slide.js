@@ -24,7 +24,7 @@ $(function() {
 
     // 이전 이미지 세팅
     // 5 / 2 = 2.5   ,  parseInt(2.5) -(정수만)->  2
-    // 슬라이드를 절반으로 나누어서 가져올 앞으로 가져올 슬라이드 개수
+    // 슬라이드를 절반으로 나누어서 앞으로 가져올 슬라이드 개수
     let initNum = parseInt(slideCount / 2)
 
     for (let i = 0; i < initNum; i++) {
@@ -107,6 +107,8 @@ $(function() {
         let gap = index - currentIndex
         // gap 의 절댓값
         let absGap = Math.abs(gap)
+
+        alert(index)
 
         // 현재 위치보다 작은 위치로 이동
         if( gap < 0 ) {
