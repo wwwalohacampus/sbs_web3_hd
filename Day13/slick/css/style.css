@@ -20,3 +20,24 @@
 .slick-next:before{
     color: black;
 }
+
+@media screen and (max-width: 1000px) {
+    .slide-container {
+        width: 800px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .slide-container {
+        width: 500px;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .slide-container {
+        width: 300px;
+    }
+    
+}
