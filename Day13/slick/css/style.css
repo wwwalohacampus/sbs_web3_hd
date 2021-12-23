@@ -21,23 +21,16 @@
     color: black;
 }
 
-@media screen and (max-width: 1000px) {
-    .slide-container {
-        width: 800px;
-    }
-    
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    .slide-container { width: 800px; }
 }
 
-@media screen and (max-width: 600px) {
-    .slide-container {
-        width: 500px;
-    }
-    
+@media screen and (max-width: 800px) {
+    .slide-container { width: 500px; height: 300px; }
+    .slide { height: 300px; }
 }
 
-@media screen and (max-width: 400px) {
-    .slide-container {
-        width: 300px;
-    }
-    
+@media screen and (max-width: 480px) {
+    .slide-container { width: 300px; }
 }
