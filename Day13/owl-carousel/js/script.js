@@ -28,11 +28,15 @@ $(document).ready(function () {
 
     // 스크롤 활성화
     owl.on('mousewheel', '.owl-stage', function (e) {
-        if (e.deltaY > 0) {
+        // * 스크롤 크기+방향을 나타내는 속성
+        // e.deltaY --(크롬,IE)--> e.originalEvent.wheelDelta
+        // e.deltaY --(Firefox)--> e.originalEvent.detail
+        if (e.originalEvent.wheelDelta > 0) {
             owl.trigger('next.owl');
         } else {
             owl.trigger('prev.owl');
         }
+        // 이벤트 기본 기능을 비활성화
         e.preventDefault();
     });
 
