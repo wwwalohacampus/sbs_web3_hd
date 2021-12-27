@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jquery.scrolla.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 
+            animate.css 적용방법
+            1. class 속성값으로 'animate__animated' 추가한다.
+            2. 'animate__(애니메이션이름)' 을 추가한다.
+        
+        -->
+        <h1 class="animate__animated animate__bounceIn">Hello Scrolla & Animate</h1>
+
+        <!-- 
+            scroll 애니메이션 적용방법
+            1. 애니메이션 적용할 class 이름을 짓는다. 
+                ex) class="animate"
+            2. data-animate 속성에 애니메이션 이름을 작성한다. (애니메이션 지정)
+                ex) data-animate="bounceIn"
+            3. data-duration 속성에 재생시간을 작성한다. 
+                ex) data-duration="1.5s"
+            4. data-delay 속성에 지연시간을 작성한다.
+                ex) data-delay="1s" 
+         -->
+         <div class="box animate" data-animate="fadeInUp" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="empty"></div>
+
+         <div class="box animate" data-animate="fadeInUp" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="empty"></div>
+
+         <div class="box animate" data-animate="fadeInUp" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="empty"></div>
+
+         <div class="box animate" data-animate="fadeInUp" data-duration="1.5s" data-delay="0.3s" ></div>
+
+         <!-- 박스 5개 이상 만들어서, 5개 이상의 애니메이션 적용해보기 -->
+         <div class="box animate" data-animate="rotateIn" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="box animate" data-animate="flipInX" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="box animate" data-animate="rollIn" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="box animate" data-animate="slideInUp" data-duration="1.5s" data-delay="0.3s" ></div>
+         <div class="box animate" data-animate="slideInLeft" data-duration="1.5s" data-delay="0.3s" ></div>
+
+         <!-- 3칸의 이미지 박스를 만들어서 순서대로 스크롤 애니메이션 적용 해보기-->
+         <hr>
+         <div class="img-container">
+             <div class="img-box animate" 
+                  data-animate="fadeInUp" 
+                  data-duration="1.3s" 
+                  data-delay="0.3s" >
+                 <img src="img/xmas.jpg" alt="">
+            </div>
+
+            <div class="img-box animate" 
+                 data-animate="fadeInUp" 
+                 data-duration="1.3s" 
+                 data-delay="0.6s" >
+                 <img src="img/xmas.jpg" alt="">
+            </div>
+
+            <div class="img-box animate" 
+                 data-animate="fadeInUp" 
+                 data-duration="1.3s" 
+                 data-delay="0.9s" 
+                 >
+                 <img src="img/xmas.jpg" alt="">
+            </div>
+         </div>
+
+         <!-- 직접 만든 애니메이션 적용하기  -->
+         <div class="img-container">
+            <div class="img-box custom animate" 
+                 data-animate="" 
+                 data-duration="1.3s" 
+                 data-delay="0.3s" >
+                <img src="img/xmas.jpg" alt="">
+           </div>
+
+           <div class="img-box custom animate" 
+                data-animate="" 
+                data-duration="1.3s" 
+                data-delay="0.6s" >
+                <img src="img/xmas.jpg" alt="">
+           </div>
+
+           <div class="img-box custom animate" 
+                data-animate="" 
+                data-duration="1.3s" 
+                data-delay="0.9s" 
+                >
+                <img src="img/xmas.jpg" alt="">
+           </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

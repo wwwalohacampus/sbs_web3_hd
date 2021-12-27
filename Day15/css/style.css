@@ -1,0 +1,40 @@
+.container {
+    width: 1000px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.box { width: 100px; height: 100px; margin: 50px; background-color: cornflowerblue; }
+
+.empty { width: 100%; height: 500px; }
+
+.img-container {
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 500px;
+    position: relative;
+}
+
+.img-box {
+    width: 250px;
+    height: 160px;
+}
+
+.img-box img { width: 100%; height: 100%; }
+
+
+.custom.animate__animated {
+    animation-name: custom;
+    animation-duration: 0.7s;
+}
+
+@keyframes custom {
+
+    0% { transform: translateY(60%) scale(0.6); opacity: 0;}
+    50% {   opacity: 0.3; }
+    100% {   opacity: 1; }
+    
+}
