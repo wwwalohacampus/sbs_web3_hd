@@ -1,0 +1,4 @@
+
+footer {}
+footer .box { height: 500px; padding: 100px 0; box-sizing: border-box; }
+footer .box h1 { font-size: 100px; }

@@ -1,0 +1,15 @@
+
+
+* { margin: 0; padding: 0; }
+
+.sidebar {
+    position: absolute;
+    left: -400px;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background-color: cornflowerblue;
+    transition: all 0.4s;
+}
+
+.sidebar.on {   left: 0;  }
